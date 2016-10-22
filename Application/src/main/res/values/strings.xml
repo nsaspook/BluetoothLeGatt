@@ -33,4 +33,8 @@
     <string name="menu_disconnect">Disconnect</string>
     <string name="menu_scan">Scan</string>
     <string name="menu_stop">Stop</string>
+    <string name="relay1">Relay1</string>
+    <string name="relay2">Relay2</string>
+    <string name="relay3">Relay3</string>
+    <string name="relay4">Relay4</string>
 </resources>

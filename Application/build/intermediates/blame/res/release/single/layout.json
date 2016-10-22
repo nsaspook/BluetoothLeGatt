@@ -160,6 +160,10 @@
         "source": "C:\\Apps\\BluetoothLeGatt\\Application\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\24.1.1\\res\\layout\\abc_action_bar_view_list_nav_layout.xml"
     },
     {
+        "merged": "C:\\Apps\\BluetoothLeGatt\\Application\\build\\intermediates\\res\\merged\\release\\layout\\relays.xml",
+        "source": "C:\\Apps\\BluetoothLeGatt\\Application\\src\\main\\res\\layout\\relays.xml"
+    },
+    {
         "merged": "C:\\Apps\\BluetoothLeGatt\\Application\\build\\intermediates\\res\\merged\\release\\layout\\abc_activity_chooser_view.xml",
         "source": "C:\\Apps\\BluetoothLeGatt\\Application\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\24.1.1\\res\\layout\\abc_activity_chooser_view.xml"
     }

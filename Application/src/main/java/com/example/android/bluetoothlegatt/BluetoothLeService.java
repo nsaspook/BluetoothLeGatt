@@ -119,6 +119,44 @@ public class BluetoothLeService extends Service {
         sendBroadcast(intent);
     }
 
+    public void readCustomCharacteristic() {
+        if (mBluetoothAdapter == null || mBluetoothGatt == null) {
+            Log.w(TAG, "BluetoothAdapter not initialized");
+            return;
+        }
+        /*check if the service is available on the device*/
+        BluetoothGattService mCustomService = mBluetoothGatt.getService(UUID.fromString("28238791-ec55-4130-86e0-002cd96aec9d"));
+        if(mCustomService == null){
+            Log.w(TAG, "Custom BLE Service not found");
+            return;
+        }
+        /*get the read characteristic from the service*/
+        BluetoothGattCharacteristic mReadCharacteristic = mCustomService.getCharacteristic(UUID.fromString("cd830609-3afa-4a9d-a58b-8224cd2ded70"));
+        if(!mBluetoothGatt.readCharacteristic(mReadCharacteristic)){
+            Log.w(TAG, "Failed to read characteristic");
+        }
+    }
+
+    public void writeCustomCharacteristic(int value) {
+        if (mBluetoothAdapter == null || mBluetoothGatt == null) {
+            Log.w(TAG, "BluetoothAdapter not initialized");
+            return;
+        }
+        /*check if the service is available on the device*/
+        BluetoothGattService mCustomService = mBluetoothGatt.getService(UUID.fromString("28238791-ec55-4130-86e0-002cd96aec9d"));
+        if(mCustomService == null){
+            Log.w(TAG, "Custom BLE Service not found");
+            return;
+        }
+        /*get the read characteristic from the service*/
+        BluetoothGattCharacteristic mWriteCharacteristic = mCustomService.getCharacteristic(UUID.fromString("cd830609-3afa-4a9d-a58b-8224cd2ded70"));
+        byte[] rvalue = {1,0,1,0};
+        mWriteCharacteristic.setValue(rvalue);
+        if(!mBluetoothGatt.writeCharacteristic(mWriteCharacteristic)){
+            Log.w(TAG, "Failed to write characteristic");
+        }
+    }
+
     private void broadcastUpdate(final String action,
                                  final BluetoothGattCharacteristic characteristic) {
         final Intent intent = new Intent(action);
@@ -132,7 +170,7 @@ public class BluetoothLeService extends Service {
 
             byte[] value = {1,0,1,0};
             ledsCharacteristic.setValue(value);
-//            bluetoothGatt.writeCharacteristic(ledsCharacteristic);
+            writeCustomCharacteristic(0);
 
             // For all other profiles, writes the data formatted in HEX.
             final byte[] data = ledsCharacteristic.getValue();
