@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="utf-8"?>
+<items version="2" >
+
+    <item
+        is-multidex="false"
+        jar="C:\Apps\BluetoothLeGatt\Application\build\intermediates\exploded-aar\com.android.support\animated-vector-drawable\24.1.1\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="24.0.1"
+        sha1="c936c1bd42f0c018c18920c7bec619ef056b24f8">
+        <dex dex="C:\Apps\BluetoothLeGatt\Application\build\intermediates\pre-dexed\release\com.android.support-animated-vector-drawable-24.1.1_5c82c4dabf34b9d7a4bccc72b142e988e9241440.jar" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Apps\BluetoothLeGatt\Application\build\intermediates\incremental-runtime-classes\debug\instant-run.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.1"
+        sha1="54c9ac5e0259a837d243da26d79b43afb7361cba">
+        <dex dex="C:\Apps\BluetoothLeGatt\Application\build\intermediates\transforms\dex\debug\folders\1000\10\instant-run_b2d5f7a7420ccee21ba41ead528bedad6cd1c3dd\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Apps\BluetoothLeGatt\Application\build\intermediates\exploded-aar\com.android.support\support-v13\24.1.1\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.1"
+        sha1="327f68d58bb39fb8b585150596b313541f8fdb87">
+        <dex dex="C:\Apps\BluetoothLeGatt\Application\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-support-v13-24.1.1_edf1b4bf50006837407c2f70afe7435776da712c\classes.dex" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Apps\BluetoothLeGatt\Application\build\intermediates\exploded-aar\com.android.support\appcompat-v7\24.1.1\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="24.0.1"
+        sha1="1256c10604bb098490eab070d76754ac5ceab35c">
+        <dex dex="C:\Apps\BluetoothLeGatt\Application\build\intermediates\pre-dexed\release\com.android.support-appcompat-v7-24.1.1_cfa17b8507e0ba58be3a9d4cf59f4ce4a3b3dd18.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Apps\BluetoothLeGatt\Application\build\intermediates\exploded-aar\com.android.support\support-v13\24.1.1\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="24.0.1"
+        sha1="327f68d58bb39fb8b585150596b313541f8fdb87">
+        <dex dex="C:\Apps\BluetoothLeGatt\Application\build\intermediates\pre-dexed\release\com.android.support-support-v13-24.1.1_edf1b4bf50006837407c2f70afe7435776da712c.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Apps\BluetoothLeGatt\Application\build\intermediates\exploded-aar\com.android.support\cardview-v7\24.1.1\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="24.0.1"
+        sha1="4add8aa95c9f4e9a2ad64b7e2bf08e97e28955c1">
+        <dex dex="C:\Apps\BluetoothLeGatt\Application\build\intermediates\pre-dexed\release\com.android.support-cardview-v7-24.1.1_9c91b049f41f75808d41e57563953785c8debb4c.jar" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Apps\BluetoothLeGatt\Application\build\intermediates\exploded-aar\com.android.support\appcompat-v7\24.1.1\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.1"
+        sha1="1256c10604bb098490eab070d76754ac5ceab35c">
+        <dex dex="C:\Apps\BluetoothLeGatt\Application\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-appcompat-v7-24.1.1_cfa17b8507e0ba58be3a9d4cf59f4ce4a3b3dd18\classes.dex" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Apps\BluetoothLeGatt\Application\build\intermediates\exploded-aar\com.android.support\support-v13\24.1.1\jars\libs\internal_impl-24.1.1.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="24.0.1"
+        sha1="ca74722504f90166103d01edcdfdb93192eb1cba">
+        <dex dex="C:\Apps\BluetoothLeGatt\Application\build\intermediates\pre-dexed\release\internal_impl-24.1.1_a71045361b85e9e47e7927a22bdfe7a91ba63bd6.jar" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Apps\BluetoothLeGatt\Application\build\intermediates\exploded-aar\com.android.support\cardview-v7\24.1.1\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.1"
+        sha1="4add8aa95c9f4e9a2ad64b7e2bf08e97e28955c1">
+        <dex dex="C:\Apps\BluetoothLeGatt\Application\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-cardview-v7-24.1.1_9c91b049f41f75808d41e57563953785c8debb4c\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Apps\BluetoothLeGatt\Application\build\intermediates\exploded-aar\com.android.support\support-v13\24.1.1\jars\libs\internal_impl-24.1.1.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.1"
+        sha1="ca74722504f90166103d01edcdfdb93192eb1cba">
+        <dex dex="C:\Apps\BluetoothLeGatt\Application\build\intermediates\transforms\dex\debug\folders\1000\10\internal_impl-24.1.1_a71045361b85e9e47e7927a22bdfe7a91ba63bd6\classes.dex" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Apps\BluetoothLeGatt\Application\build\intermediates\exploded-aar\com.android.support\support-v4\24.1.1\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="24.0.1"
+        sha1="6d7d803871e3203465f71a163e7af104f807b446">
+        <dex dex="C:\Apps\BluetoothLeGatt\Application\build\intermediates\pre-dexed\release\com.android.support-support-v4-24.1.1_a5bfc04e0a3d83a92608be55a762357de5eed423.jar" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Apps\BluetoothLeGatt\Application\build\intermediates\exploded-aar\com.android.support\support-v4\24.1.1\jars\libs\internal_impl-24.1.1.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.1"
+        sha1="f78c2f395cb096f9dc1dc07e729922b8fcd3c4f5">
+        <dex dex="C:\Apps\BluetoothLeGatt\Application\build\intermediates\transforms\dex\debug\folders\1000\10\internal_impl-24.1.1_498800dc72069aacc925517f02398844eaefefd7\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\gtv\AppData\Local\Android\sdk\extras\android\m2repository\com\android\support\support-annotations\24.1.1\support-annotations-24.1.1.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.1"
+        sha1="3af19f153122737b372622fa6c81dd11a1c6b999">
+        <dex dex="C:\Apps\BluetoothLeGatt\Application\build\intermediates\transforms\dex\debug\folders\1000\10\support-annotations-24.1.1_fcbbefd26febd605aa3ae70b41dfbb3560388486\classes.dex" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\gtv\AppData\Local\Android\sdk\extras\android\m2repository\com\android\support\support-annotations\24.1.1\support-annotations-24.1.1.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="24.0.1"
+        sha1="3af19f153122737b372622fa6c81dd11a1c6b999">
+        <dex dex="C:\Apps\BluetoothLeGatt\Application\build\intermediates\pre-dexed\release\support-annotations-24.1.1_fcbbefd26febd605aa3ae70b41dfbb3560388486.jar" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Apps\BluetoothLeGatt\Application\build\intermediates\incremental-classes\debug\instant-run-bootstrap.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.1"
+        sha1="a9c28e58895b231a42b110d6bf37872b3f30eaf3">
+        <dex dex="C:\Apps\BluetoothLeGatt\Application\build\intermediates\transforms\dex\debug\folders\1000\10\instant-run-bootstrap_b8dea8d880fa7797a99d3073f0b5cc91dd1465db\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Apps\BluetoothLeGatt\Application\build\intermediates\exploded-aar\com.android.support\support-vector-drawable\24.1.1\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.1"
+        sha1="f62e763609f65e47dc6c498760a4accf02776788">
+        <dex dex="C:\Apps\BluetoothLeGatt\Application\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-support-vector-drawable-24.1.1_235a0afbf9fe1d153c56b24d3643996ed51405f2\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Apps\BluetoothLeGatt\Application\build\intermediates\exploded-aar\com.android.support\support-v4\24.1.1\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.1"
+        sha1="6d7d803871e3203465f71a163e7af104f807b446">
+        <dex dex="C:\Apps\BluetoothLeGatt\Application\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-support-v4-24.1.1_a5bfc04e0a3d83a92608be55a762357de5eed423\classes.dex" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Apps\BluetoothLeGatt\Application\build\intermediates\exploded-aar\com.android.support\support-v4\24.1.1\jars\libs\internal_impl-24.1.1.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="24.0.1"
+        sha1="f78c2f395cb096f9dc1dc07e729922b8fcd3c4f5">
+        <dex dex="C:\Apps\BluetoothLeGatt\Application\build\intermediates\pre-dexed\release\internal_impl-24.1.1_498800dc72069aacc925517f02398844eaefefd7.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Apps\BluetoothLeGatt\Application\build\intermediates\exploded-aar\com.android.support\support-vector-drawable\24.1.1\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="24.0.1"
+        sha1="f62e763609f65e47dc6c498760a4accf02776788">
+        <dex dex="C:\Apps\BluetoothLeGatt\Application\build\intermediates\pre-dexed\release\com.android.support-support-vector-drawable-24.1.1_235a0afbf9fe1d153c56b24d3643996ed51405f2.jar" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Apps\BluetoothLeGatt\Application\build\intermediates\exploded-aar\com.android.support\animated-vector-drawable\24.1.1\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.1"
+        sha1="c936c1bd42f0c018c18920c7bec619ef056b24f8">
+        <dex dex="C:\Apps\BluetoothLeGatt\Application\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-animated-vector-drawable-24.1.1_5c82c4dabf34b9d7a4bccc72b142e988e9241440\classes.dex" />
+    </item>
+
+</items>
