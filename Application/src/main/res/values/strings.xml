@@ -37,4 +37,9 @@
     <string name="relay2">Relay2</string>
     <string name="relay3">Relay3</string>
     <string name="relay4">Relay4</string>
+    <string name="fab_4_mchp">FAB-4 MCHP</string>
+    <string name="relay_1">Relay 1</string>
+    <string name="relay_2">Relay 2</string>
+    <string name="relay_3">Relay 3</string>
+    <string name="relay_4">Relay 4</string>
 </resources>

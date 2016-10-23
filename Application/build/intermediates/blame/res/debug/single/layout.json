@@ -20,12 +20,12 @@
         "source": "C:\\Apps\\BluetoothLeGatt\\Application\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\24.1.1\\res\\layout\\notification_media_cancel_action.xml"
     },
     {
-        "merged": "C:\\Apps\\BluetoothLeGatt\\Application\\build\\intermediates\\res\\merged\\debug\\layout\\notification_template_media.xml",
-        "source": "C:\\Apps\\BluetoothLeGatt\\Application\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\24.1.1\\res\\layout\\notification_template_media.xml"
-    },
-    {
         "merged": "C:\\Apps\\BluetoothLeGatt\\Application\\build\\intermediates\\res\\merged\\debug\\layout\\abc_activity_chooser_view.xml",
         "source": "C:\\Apps\\BluetoothLeGatt\\Application\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\24.1.1\\res\\layout\\abc_activity_chooser_view.xml"
+    },
+    {
+        "merged": "C:\\Apps\\BluetoothLeGatt\\Application\\build\\intermediates\\res\\merged\\debug\\layout\\notification_template_media.xml",
+        "source": "C:\\Apps\\BluetoothLeGatt\\Application\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\24.1.1\\res\\layout\\notification_template_media.xml"
     },
     {
         "merged": "C:\\Apps\\BluetoothLeGatt\\Application\\build\\intermediates\\res\\merged\\debug\\layout\\abc_search_view.xml",
