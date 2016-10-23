@@ -1,4 +1,4 @@
-#Sat Oct 22 21:59:23 PDT 2016
-base.0=C\:\\Apps\\BluetoothLeGatt\\Application\\build\\intermediates\\transforms\\dex\\release\\folders\\1000\\1f\\main
+#Sun Oct 23 14:09:49 PDT 2016
+base.0=/root/as_stuff/BluetoothLeGatt/Application/build/intermediates/transforms/dex/release/folders/1000/1f/main
 renamed.0=classes.dex
-file.0=C\:\\Apps\\BluetoothLeGatt\\Application\\build\\intermediates\\transforms\\dex\\release\\folders\\1000\\1f\\main\\classes.dex
+file.0=/root/as_stuff/BluetoothLeGatt/Application/build/intermediates/transforms/dex/release/folders/1000/1f/main/classes.dex

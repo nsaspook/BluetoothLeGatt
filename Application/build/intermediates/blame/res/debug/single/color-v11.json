@@ -1,10 +1,10 @@
 [
     {
-        "merged": "C:\\Apps\\BluetoothLeGatt\\Application\\build\\intermediates\\res\\merged\\debug\\color-v11\\abc_background_cache_hint_selector_material_dark.xml",
-        "source": "C:\\Apps\\BluetoothLeGatt\\Application\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\24.1.1\\res\\color-v11\\abc_background_cache_hint_selector_material_dark.xml"
+        "merged": "/root/as_stuff/BluetoothLeGatt/Application/build/intermediates/res/merged/debug/color-v11/abc_background_cache_hint_selector_material_light.xml",
+        "source": "/root/as_stuff/BluetoothLeGatt/Application/build/intermediates/exploded-aar/com.android.support/appcompat-v7/24.1.1/res/color-v11/abc_background_cache_hint_selector_material_light.xml"
     },
     {
-        "merged": "C:\\Apps\\BluetoothLeGatt\\Application\\build\\intermediates\\res\\merged\\debug\\color-v11\\abc_background_cache_hint_selector_material_light.xml",
-        "source": "C:\\Apps\\BluetoothLeGatt\\Application\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\24.1.1\\res\\color-v11\\abc_background_cache_hint_selector_material_light.xml"
+        "merged": "/root/as_stuff/BluetoothLeGatt/Application/build/intermediates/res/merged/debug/color-v11/abc_background_cache_hint_selector_material_dark.xml",
+        "source": "/root/as_stuff/BluetoothLeGatt/Application/build/intermediates/exploded-aar/com.android.support/appcompat-v7/24.1.1/res/color-v11/abc_background_cache_hint_selector_material_dark.xml"
     }
 ]

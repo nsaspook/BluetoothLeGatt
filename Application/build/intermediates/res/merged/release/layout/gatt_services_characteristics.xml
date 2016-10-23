@@ -69,37 +69,37 @@
 
     <ExpandableListView android:id="@+id/gatt_services_list"
             android:layout_width="match_parent"
-            android:layout_height="170dp"
+            android:layout_height="0dp"
         android:layout_weight="0.51" />
 
     <ToggleButton
-        android:text="Relay 1"
+        android:text="@string/relay_1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/rel1"
         android:onClick="onClickWrite" />
 
     <ToggleButton
-        android:text="Relay 2"
+        android:text="@string/relay_2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/rel2"
         android:onClick="onClickWrite" />
 
     <ToggleButton
-        android:text="Relay 3"
+        android:text="@string/relay_3"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/rel3" />
 
     <ToggleButton
-        android:text="Relay 4"
+        android:text="@string/relay_4"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/rel4" />
 
     <TextView
-        android:text="FAB-4 MCHP"
+        android:text="@string/fab_4_mchp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/relayView" />

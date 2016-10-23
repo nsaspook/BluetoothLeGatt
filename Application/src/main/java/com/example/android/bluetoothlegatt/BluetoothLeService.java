@@ -150,7 +150,27 @@ public class BluetoothLeService extends Service {
         }
         /*get the read characteristic from the service*/
         BluetoothGattCharacteristic mWriteCharacteristic = mCustomService.getCharacteristic(UUID.fromString("cd830609-3afa-4a9d-a58b-8224cd2ded70"));
-        byte[] rvalue = {1,0,1,0};
+        byte[] rvalue = {1,1,0,0};
+        mWriteCharacteristic.setValue(rvalue);
+        if(!mBluetoothGatt.writeCharacteristic(mWriteCharacteristic)){
+            Log.w(TAG, "Failed to write characteristic");
+        }
+    }
+
+    public void writeCustomCharacteristicOff(int value) {
+        if (mBluetoothAdapter == null || mBluetoothGatt == null) {
+            Log.w(TAG, "BluetoothAdapter not initialized");
+            return;
+        }
+        /*check if the service is available on the device*/
+        BluetoothGattService mCustomService = mBluetoothGatt.getService(UUID.fromString("28238791-ec55-4130-86e0-002cd96aec9d"));
+        if(mCustomService == null){
+            Log.w(TAG, "Custom BLE Service not found");
+            return;
+        }
+        /*get the read characteristic from the service*/
+        BluetoothGattCharacteristic mWriteCharacteristic = mCustomService.getCharacteristic(UUID.fromString("cd830609-3afa-4a9d-a58b-8224cd2ded70"));
+        byte[] rvalue = {0,0,0,0};
         mWriteCharacteristic.setValue(rvalue);
         if(!mBluetoothGatt.writeCharacteristic(mWriteCharacteristic)){
             Log.w(TAG, "Failed to write characteristic");
@@ -168,7 +188,7 @@ public class BluetoothLeService extends Service {
         if (UUID_RELAY_STATUS_CONTROL.equals(characteristic.getUuid())) {
             ledsCharacteristic = characteristic;
 
-            byte[] value = {1,0,1,0};
+            byte[] value = {1,1,0,0};
             ledsCharacteristic.setValue(value);
             writeCustomCharacteristic(0);
 
@@ -182,6 +202,7 @@ public class BluetoothLeService extends Service {
             }
 
         } else {
+            writeCustomCharacteristicOff(0);
             // For all other profiles, writes the data formatted in HEX.
             final byte[] data = characteristic.getValue();
             if (data != null && data.length > 0) {
