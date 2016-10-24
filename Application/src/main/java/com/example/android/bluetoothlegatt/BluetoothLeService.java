@@ -217,7 +217,8 @@ public class BluetoothLeService extends Service {
             if (data != null && data.length > 0) {
                 final StringBuilder stringBuilder = new StringBuilder(data.length);
                 for (byte byteChar : data)
-                    stringBuilder.append(String.format("%02X ", byteChar));
+                    stringBuilder.append(String.format("%s ", (byteChar==1) ? "On":"Off"));
+//                    stringBuilder.append(String.format("%02X ", byteChar));
                 intent.putExtra(EXTRA_DATA, new String(data) + "\n" + stringBuilder.toString());
             }
 
@@ -228,7 +229,8 @@ public class BluetoothLeService extends Service {
             if (data != null && data.length > 0) {
                 final StringBuilder stringBuilder = new StringBuilder(data.length);
                 for (byte byteChar : data)
-                    stringBuilder.append(String.format("%02X ", byteChar));
+                    stringBuilder.append(String.format("%s ", (byteChar==1) ? "On":"Off"));
+ //                   stringBuilder.append(String.format("%02X ", byteChar));
                 intent.putExtra(EXTRA_DATA, new String(data) + "\n" + stringBuilder.toString());
             }
         }
