@@ -56,12 +56,12 @@
         "source": "/root/as_stuff/BluetoothLeGatt/Application/build/intermediates/exploded-aar/com.android.support/appcompat-v7/24.1.1/res/drawable-hdpi-v4/abc_scrubber_control_off_mtrl_alpha.png"
     },
     {
-        "merged": "/root/as_stuff/BluetoothLeGatt/Application/build/intermediates/res/merged/debug/drawable-hdpi-v4/abc_ic_menu_cut_mtrl_alpha.png",
-        "source": "/root/as_stuff/BluetoothLeGatt/Application/build/intermediates/exploded-aar/com.android.support/appcompat-v7/24.1.1/res/drawable-hdpi-v4/abc_ic_menu_cut_mtrl_alpha.png"
-    },
-    {
         "merged": "/root/as_stuff/BluetoothLeGatt/Application/build/intermediates/res/merged/debug/drawable-hdpi-v4/abc_list_focused_holo.9.png",
         "source": "/root/as_stuff/BluetoothLeGatt/Application/build/intermediates/exploded-aar/com.android.support/appcompat-v7/24.1.1/res/drawable-hdpi-v4/abc_list_focused_holo.9.png"
+    },
+    {
+        "merged": "/root/as_stuff/BluetoothLeGatt/Application/build/intermediates/res/merged/debug/drawable-hdpi-v4/abc_ic_menu_cut_mtrl_alpha.png",
+        "source": "/root/as_stuff/BluetoothLeGatt/Application/build/intermediates/exploded-aar/com.android.support/appcompat-v7/24.1.1/res/drawable-hdpi-v4/abc_ic_menu_cut_mtrl_alpha.png"
     },
     {
         "merged": "/root/as_stuff/BluetoothLeGatt/Application/build/intermediates/res/merged/debug/drawable-hdpi-v4/abc_list_pressed_holo_light.9.png",

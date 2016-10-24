@@ -1,11 +1,11 @@
 [
     {
-        "merged": "/root/as_stuff/BluetoothLeGatt/Application/build/intermediates/res/merged/debug/drawable-xxxhdpi-v4/abc_ic_menu_copy_mtrl_am_alpha.png",
-        "source": "/root/as_stuff/BluetoothLeGatt/Application/build/intermediates/exploded-aar/com.android.support/appcompat-v7/24.1.1/res/drawable-xxxhdpi-v4/abc_ic_menu_copy_mtrl_am_alpha.png"
-    },
-    {
         "merged": "/root/as_stuff/BluetoothLeGatt/Application/build/intermediates/res/merged/debug/drawable-xxxhdpi-v4/abc_ic_star_black_16dp.png",
         "source": "/root/as_stuff/BluetoothLeGatt/Application/build/intermediates/exploded-aar/com.android.support/appcompat-v7/24.1.1/res/drawable-xxxhdpi-v4/abc_ic_star_black_16dp.png"
+    },
+    {
+        "merged": "/root/as_stuff/BluetoothLeGatt/Application/build/intermediates/res/merged/debug/drawable-xxxhdpi-v4/abc_ic_menu_copy_mtrl_am_alpha.png",
+        "source": "/root/as_stuff/BluetoothLeGatt/Application/build/intermediates/exploded-aar/com.android.support/appcompat-v7/24.1.1/res/drawable-xxxhdpi-v4/abc_ic_menu_copy_mtrl_am_alpha.png"
     },
     {
         "merged": "/root/as_stuff/BluetoothLeGatt/Application/build/intermediates/res/merged/debug/drawable-xxxhdpi-v4/abc_btn_switch_to_on_mtrl_00012.9.png",

@@ -68,12 +68,12 @@
         "source": "/root/as_stuff/BluetoothLeGatt/Application/build/intermediates/exploded-aar/com.android.support/appcompat-v7/24.1.1/res/drawable/abc_seekbar_thumb_material.xml"
     },
     {
-        "merged": "/root/as_stuff/BluetoothLeGatt/Application/build/intermediates/res/merged/debug/drawable/abc_item_background_holo_light.xml",
-        "source": "/root/as_stuff/BluetoothLeGatt/Application/build/intermediates/exploded-aar/com.android.support/appcompat-v7/24.1.1/res/drawable/abc_item_background_holo_light.xml"
-    },
-    {
         "merged": "/root/as_stuff/BluetoothLeGatt/Application/build/intermediates/res/merged/debug/drawable/abc_list_selector_background_transition_holo_dark.xml",
         "source": "/root/as_stuff/BluetoothLeGatt/Application/build/intermediates/exploded-aar/com.android.support/appcompat-v7/24.1.1/res/drawable/abc_list_selector_background_transition_holo_dark.xml"
+    },
+    {
+        "merged": "/root/as_stuff/BluetoothLeGatt/Application/build/intermediates/res/merged/debug/drawable/abc_item_background_holo_light.xml",
+        "source": "/root/as_stuff/BluetoothLeGatt/Application/build/intermediates/exploded-aar/com.android.support/appcompat-v7/24.1.1/res/drawable/abc_item_background_holo_light.xml"
     },
     {
         "merged": "/root/as_stuff/BluetoothLeGatt/Application/build/intermediates/res/merged/debug/drawable/abc_ic_ab_back_material.xml",
