@@ -288,12 +288,6 @@
     <item format="float" name="hint_alpha_material_light" type="dimen">0.38</item>
     <item format="float" name="hint_pressed_alpha_material_dark" type="dimen">0.70</item>
     <item format="float" name="hint_pressed_alpha_material_light" type="dimen">0.54</item>
-    <dimen name="horizontal_page_margin">@dimen/margin_medium</dimen>
-    <dimen name="margin_huge">64dp</dimen>
-    <dimen name="margin_large">32dp</dimen>
-    <dimen name="margin_medium">16dp</dimen>
-    <dimen name="margin_small">8dp</dimen>
-    <dimen name="margin_tiny">4dp</dimen>
     <dimen name="notification_action_icon_size">32dp</dimen>
     <dimen name="notification_action_text_size">13sp</dimen>
     <dimen name="notification_big_circle_margin">12dp</dimen>
@@ -309,7 +303,6 @@
     <dimen name="notification_subtext_size">13sp</dimen>
     <dimen name="notification_top_pad">10dp</dimen>
     <dimen name="notification_top_pad_large_text">5dp</dimen>
-    <dimen name="vertical_page_margin">@dimen/margin_medium</dimen>
     <drawable name="notification_template_icon_bg">#3333B5E5</drawable>
     <drawable name="notification_template_icon_low_bg">#0cffffff</drawable>
     <item name="action_bar_activity_content" type="id"/>
@@ -361,17 +354,6 @@
     <string name="connected">Connected</string>
     <string name="disconnected">Disconnected</string>
     <string name="error_bluetooth_not_supported">Bluetooth not supported.</string>
-    <string name="fab_4_mchp">FAB-4 MCHP</string>
-    <string name="intro_message">
-        
-        
-            
-            This sample demonstrates how to use the Bluetooth LE Generic Attribute Profile (GATT)
-            to transmit arbitrary data between devices.
-            
-        
-        
-    </string>
     <string name="label_data">Data:</string>
     <string name="label_device_address">Device address:</string>
     <string name="label_state">State:</string>
@@ -380,14 +362,6 @@
     <string name="menu_scan">Scan</string>
     <string name="menu_stop">Stop</string>
     <string name="no_data">No data</string>
-    <string name="relay1">Relay1</string>
-    <string name="relay2">Relay2</string>
-    <string name="relay3">Relay3</string>
-    <string name="relay4">Relay4</string>
-    <string name="relay_1">Relay 1</string>
-    <string name="relay_2">Relay 2</string>
-    <string name="relay_3">Relay 3</string>
-    <string name="relay_4">Relay 4</string>
     <string name="search_menu_title">Search</string>
     <string name="status_bar_notification_info_overflow">999+</string>
     <string name="title_devices">BLE Device Scan</string>

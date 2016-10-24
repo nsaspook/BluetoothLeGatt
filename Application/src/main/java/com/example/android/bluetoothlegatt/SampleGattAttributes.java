@@ -21,12 +21,12 @@ import java.util.HashMap;
 /**
  * This class includes a small subset of standard GATT attributes for demonstration purposes.
  */
-public class SampleGattAttributes {
-    private static HashMap<String, String> attributes = new HashMap();
-    public static String RELAY_STATUS_CONTROL1234 = "cd83060a-3afa-4a9d-a58b-8224cd2ded70";
-    public static String RELAY_STATUS_CONTROL1 = "cd830609-3afa-4a9d-a58b-8224cd2ded70";
-    public static String RELAY_STATUS_CONTROL2 = "362232e5-c5a9-4af6-b30c-e208f1a9ae3e";
-    public static String CLIENT_CHARACTERISTIC_CONFIG = "cd830609-3afa-4a9d-a58b-8224cd2ded70";
+class SampleGattAttributes {
+    public static final String RELAY_STATUS_CONTROL1234 = "cd83060a-3afa-4a9d-a58b-8224cd2ded70";
+    public static final String RELAY_STATUS_CONTROL1 = "cd830609-3afa-4a9d-a58b-8224cd2ded70";
+    public static final String RELAY_STATUS_CONTROL2 = "362232e5-c5a9-4af6-b30c-e208f1a9ae3e";
+    public static final String CLIENT_CHARACTERISTIC_CONFIG = "cd830609-3afa-4a9d-a58b-8224cd2ded70";
+    private static final HashMap<String, String> attributes = new HashMap();
 
     static {
         // Sample Services.
