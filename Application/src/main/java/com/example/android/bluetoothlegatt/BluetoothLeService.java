@@ -212,7 +212,7 @@ public class BluetoothLeService extends Service {
                 writeCustomCharacteristic(5);
             }
 
-            // For all other profiles, writes the data formatted in HEX.
+            // writes the data formatted in HEX.
             final byte[] data = ledsCharacteristic.getValue();
             if (data != null && data.length > 0) {
                 final StringBuilder stringBuilder = new StringBuilder(data.length);
@@ -224,7 +224,7 @@ public class BluetoothLeService extends Service {
         } else {
             writeCustomCharacteristic(0);
             // For all other profiles, writes the data formatted in HEX.
-            final byte[] data = characteristic.getValue();
+            final byte[] data = {0, 0, 0, 0}; // show all relays off
             if (data != null && data.length > 0) {
                 final StringBuilder stringBuilder = new StringBuilder(data.length);
                 for (byte byteChar : data)
@@ -378,7 +378,6 @@ public class BluetoothLeService extends Service {
         }
         mBluetoothGatt.setCharacteristicNotification(characteristic, enabled);
 
-        // This is specific to Heart Rate Measurement.
         if (UUID_RELAY_STATUS_CONTROL1.equals(characteristic.getUuid())) {
             BluetoothGattDescriptor descriptor = characteristic.getDescriptor(
                     UUID.fromString(SampleGattAttributes.CLIENT_CHARACTERISTIC_CONFIG));

@@ -1939,11 +1939,11 @@ containing a value of this type.
         public static final int listMode=0x7f0a0009;
         public static final int list_item=0x7f0a002b;
         public static final int media_actions=0x7f0a005c;
-        public static final int menu_connect=0x7f0a006b;
-        public static final int menu_disconnect=0x7f0a006c;
-        public static final int menu_refresh=0x7f0a006a;
-        public static final int menu_scan=0x7f0a006d;
-        public static final int menu_stop=0x7f0a006e;
+        public static final int menu_connect=0x7f0a0067;
+        public static final int menu_disconnect=0x7f0a0068;
+        public static final int menu_refresh=0x7f0a0066;
+        public static final int menu_scan=0x7f0a0069;
+        public static final int menu_stop=0x7f0a006a;
         public static final int middle=0x7f0a001c;
         public static final int multiply=0x7f0a0014;
         public static final int never=0x7f0a0020;
@@ -1987,10 +1987,6 @@ containing a value of this type.
         public static final int time=0x7f0a005f;
         public static final int title=0x7f0a002d;
         public static final int title_template=0x7f0a0032;
-        public static final int toggleButton1=0x7f0a0066;
-        public static final int toggleButton2=0x7f0a0067;
-        public static final int toggleButton3=0x7f0a0068;
-        public static final int toggleButton4=0x7f0a0069;
         public static final int top=0x7f0a0023;
         public static final int topPanel=0x7f0a0031;
         public static final int up=0x7f0a0008;
@@ -2042,11 +2038,10 @@ containing a value of this type.
         public static final int notification_template_media=0x7f030022;
         public static final int notification_template_part_chronometer=0x7f030023;
         public static final int notification_template_part_time=0x7f030024;
-        public static final int relays=0x7f030025;
-        public static final int select_dialog_item_material=0x7f030026;
-        public static final int select_dialog_multichoice_material=0x7f030027;
-        public static final int select_dialog_singlechoice_material=0x7f030028;
-        public static final int support_simple_spinner_dropdown_item=0x7f030029;
+        public static final int select_dialog_item_material=0x7f030025;
+        public static final int select_dialog_multichoice_material=0x7f030026;
+        public static final int select_dialog_singlechoice_material=0x7f030027;
+        public static final int support_simple_spinner_dropdown_item=0x7f030028;
     }
     public static final class menu {
         public static final int gatt_services=0x7f0c0000;
