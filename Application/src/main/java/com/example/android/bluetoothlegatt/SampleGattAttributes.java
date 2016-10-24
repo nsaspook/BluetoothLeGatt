@@ -23,10 +23,9 @@ import java.util.HashMap;
  */
 public class SampleGattAttributes {
     private static HashMap<String, String> attributes = new HashMap();
-    //public static String RELAY_STATUS_CONTROL1 = "00002a37-0000-1000-8000-00805f9b34fb";
+    public static String RELAY_STATUS_CONTROL1234 = "cd83060a-3afa-4a9d-a58b-8224cd2ded70";
     public static String RELAY_STATUS_CONTROL1 = "cd830609-3afa-4a9d-a58b-8224cd2ded70";
     public static String RELAY_STATUS_CONTROL2 = "362232e5-c5a9-4af6-b30c-e208f1a9ae3e";
-    //public static String CLIENT_CHARACTERISTIC_CONFIG = "00002902-0000-1000-8000-00805f9b34fb";
     public static String CLIENT_CHARACTERISTIC_CONFIG = "cd830609-3afa-4a9d-a58b-8224cd2ded70";
 
     static {
@@ -36,6 +35,7 @@ public class SampleGattAttributes {
         attributes.put("00001800-0000-1000-8000-00805f9b34fb", "Not Used");
         attributes.put("00001801-0000-1000-8000-00805f9b34fb", "Not Used");
         // Sample Characteristics.
+        attributes.put(RELAY_STATUS_CONTROL1234, "Relays All On");
         attributes.put(RELAY_STATUS_CONTROL1, "Relay Control 1");
         attributes.put(RELAY_STATUS_CONTROL2, "Relay Control 2");
         attributes.put("8f7087bd-fdf3-4b87-b10f-abbf636b1cd5", "Relays All Off");

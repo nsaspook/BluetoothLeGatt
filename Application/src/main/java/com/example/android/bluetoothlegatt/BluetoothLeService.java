@@ -63,6 +63,8 @@ public class BluetoothLeService extends Service {
     public final static String EXTRA_DATA =
             "com.example.bluetooth.le.EXTRA_DATA";
 
+    public final static UUID UUID_RELAY_STATUS_CONTROL1234 =
+            UUID.fromString(SampleGattAttributes.RELAY_STATUS_CONTROL1234);
     public final static UUID UUID_RELAY_STATUS_CONTROL1 =
             UUID.fromString(SampleGattAttributes.RELAY_STATUS_CONTROL1);
     public final static UUID UUID_RELAY_STATUS_CONTROL2 =
@@ -128,13 +130,13 @@ public class BluetoothLeService extends Service {
         }
         /*check if the service is available on the device*/
         BluetoothGattService mCustomService = mBluetoothGatt.getService(UUID.fromString("28238791-ec55-4130-86e0-002cd96aec9d"));
-        if(mCustomService == null){
+        if (mCustomService == null) {
             Log.w(TAG, "Custom BLE Service not found");
             return;
         }
         /*get the read characteristic from the service*/
         BluetoothGattCharacteristic mReadCharacteristic = mCustomService.getCharacteristic(UUID.fromString("cd830609-3afa-4a9d-a58b-8224cd2ded70"));
-        if(!mBluetoothGatt.readCharacteristic(mReadCharacteristic)){
+        if (!mBluetoothGatt.readCharacteristic(mReadCharacteristic)) {
             Log.w(TAG, "Failed to read characteristic");
         }
     }
@@ -146,33 +148,38 @@ public class BluetoothLeService extends Service {
         }
         /*check if the service is available on the device*/
         BluetoothGattService mCustomService = mBluetoothGatt.getService(UUID.fromString("28238791-ec55-4130-86e0-002cd96aec9d"));
-        if(mCustomService == null){
+        if (mCustomService == null) {
             Log.w(TAG, "Custom BLE Service not found");
             return;
         }
         /*get the read characteristic from the service*/
         BluetoothGattCharacteristic mWriteCharacteristic = mCustomService.getCharacteristic(UUID.fromString("cd830609-3afa-4a9d-a58b-8224cd2ded70"));
-        byte[] drvalue = {0,0,0,0};
+        byte[] drvalue = {0, 0, 0, 0};
         mWriteCharacteristic.setValue(drvalue);
 
-        if (value ==1) {
-            byte[] rvalue = {1,0,0,0};
+        if (value == 1) {
+            byte[] rvalue = {1, 0, 0, 0};
             mWriteCharacteristic.setValue(rvalue);
         }
-        if (value ==2) {
-            byte[] rvalue = {0,1,0,0};
+        if (value == 2) {
+            byte[] rvalue = {0, 1, 0, 0};
             mWriteCharacteristic.setValue(rvalue);
         }
-        if (value ==3) {
-            byte[] rvalue = {0,0,1,0};
+        if (value == 3) {
+            byte[] rvalue = {0, 0, 1, 0};
             mWriteCharacteristic.setValue(rvalue);
         }
-        if (value ==4) {
-            byte[] rvalue = {0,0,0,1};
+        if (value == 4) {
+            byte[] rvalue = {0, 0, 0, 1};
             mWriteCharacteristic.setValue(rvalue);
         }
 
-        if(!mBluetoothGatt.writeCharacteristic(mWriteCharacteristic)){
+        if (value == 5) {
+            byte[] rvalue = {1, 1, 1, 1};
+            mWriteCharacteristic.setValue(rvalue);
+        }
+
+        if (!mBluetoothGatt.writeCharacteristic(mWriteCharacteristic)) {
             Log.w(TAG, "Failed to write characteristic");
         }
     }
@@ -185,7 +192,7 @@ public class BluetoothLeService extends Service {
         // This is special handling for the Heart Rate Measurement profile.  Data parsing is
         // carried out as per profile specifications:
         // http://developer.bluetooth.org/gatt/characteristics/Pages/CharacteristicViewer.aspx?u=org.bluetooth.characteristic.heart_rate_measurement.xml
-        if (UUID_RELAY_STATUS_CONTROL1.equals(characteristic.getUuid()) || UUID_RELAY_STATUS_CONTROL2.equals(characteristic.getUuid())) {
+        if (UUID_RELAY_STATUS_CONTROL1.equals(characteristic.getUuid()) || UUID_RELAY_STATUS_CONTROL2.equals(characteristic.getUuid()) || UUID_RELAY_STATUS_CONTROL1234.equals(characteristic.getUuid())) {
             ledsCharacteristic = characteristic;
 
             if (UUID_RELAY_STATUS_CONTROL1.equals(characteristic.getUuid())) {
@@ -199,11 +206,17 @@ public class BluetoothLeService extends Service {
                 writeCustomCharacteristic(2);
             }
 
+            if (UUID_RELAY_STATUS_CONTROL1234.equals(characteristic.getUuid())) {
+                byte[] value = {1, 1, 1, 1};
+                ledsCharacteristic.setValue(value);
+                writeCustomCharacteristic(5);
+            }
+
             // For all other profiles, writes the data formatted in HEX.
             final byte[] data = ledsCharacteristic.getValue();
             if (data != null && data.length > 0) {
                 final StringBuilder stringBuilder = new StringBuilder(data.length);
-                for(byte byteChar : data)
+                for (byte byteChar : data)
                     stringBuilder.append(String.format("%02X ", byteChar));
                 intent.putExtra(EXTRA_DATA, new String(data) + "\n" + stringBuilder.toString());
             }
@@ -214,7 +227,7 @@ public class BluetoothLeService extends Service {
             final byte[] data = characteristic.getValue();
             if (data != null && data.length > 0) {
                 final StringBuilder stringBuilder = new StringBuilder(data.length);
-                for(byte byteChar : data)
+                for (byte byteChar : data)
                     stringBuilder.append(String.format("%02X ", byteChar));
                 intent.putExtra(EXTRA_DATA, new String(data) + "\n" + stringBuilder.toString());
             }
@@ -273,11 +286,10 @@ public class BluetoothLeService extends Service {
      * Connects to the GATT server hosted on the Bluetooth LE device.
      *
      * @param address The device address of the destination device.
-     *
      * @return Return true if the connection is initiated successfully. The connection result
-     *         is reported asynchronously through the
-     *         {@code BluetoothGattCallback#onConnectionStateChange(android.bluetooth.BluetoothGatt, int, int)}
-     *         callback.
+     * is reported asynchronously through the
+     * {@code BluetoothGattCallback#onConnectionStateChange(android.bluetooth.BluetoothGatt, int, int)}
+     * callback.
      */
     public boolean connect(final String address) {
         if (mBluetoothAdapter == null || address == null) {
@@ -356,7 +368,7 @@ public class BluetoothLeService extends Service {
      * Enables or disables notification on a give characteristic.
      *
      * @param characteristic Characteristic to act on.
-     * @param enabled If true, enable notification.  False otherwise.
+     * @param enabled        If true, enable notification.  False otherwise.
      */
     public void setCharacteristicNotification(BluetoothGattCharacteristic characteristic,
                                               boolean enabled) {
