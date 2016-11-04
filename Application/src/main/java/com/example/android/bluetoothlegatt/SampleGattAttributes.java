@@ -21,12 +21,13 @@ import java.util.HashMap;
 /**
  * This class includes a small subset of standard GATT attributes for demonstration purposes.
  */
-class SampleGattAttributes {
-    public static final String RELAY_STATUS_CONTROL1234 = "cd83060a-3afa-4a9d-a58b-8224cd2ded70";
-    public static final String RELAY_STATUS_CONTROL1 = "cd830609-3afa-4a9d-a58b-8224cd2ded70";
-    public static final String RELAY_STATUS_CONTROL2 = "362232e5-c5a9-4af6-b30c-e208f1a9ae3e";
-    public static final String CLIENT_CHARACTERISTIC_CONFIG = "cd830609-3afa-4a9d-a58b-8224cd2ded70";
-    private static final HashMap<String, String> attributes = new HashMap();
+public class SampleGattAttributes {
+    private static HashMap<String, String> attributes = new HashMap();
+    public static String SPI_ADC_CHAN = "cd83060b-3afa-4a9d-a58b-8224cd2ded70";
+    public static String RELAY_STATUS_CONTROL1234 = "cd83060a-3afa-4a9d-a58b-8224cd2ded70";
+    public static String RELAY_STATUS_CONTROL1 = "cd830609-3afa-4a9d-a58b-8224cd2ded70";
+    public static String RELAY_STATUS_CONTROL2 = "362232e5-c5a9-4af6-b30c-e208f1a9ae3e";
+    public static String CLIENT_CHARACTERISTIC_CONFIG = "cd830609-3afa-4a9d-a58b-8224cd2ded70";
 
     static {
         // Sample Services.
@@ -35,6 +36,7 @@ class SampleGattAttributes {
         attributes.put("00001800-0000-1000-8000-00805f9b34fb", "Not Used");
         attributes.put("00001801-0000-1000-8000-00805f9b34fb", "Not Used");
         // Sample Characteristics.
+        attributes.put(SPI_ADC_CHAN, "Analog Channel");
         attributes.put(RELAY_STATUS_CONTROL1234, "Relays All On");
         attributes.put(RELAY_STATUS_CONTROL1, "Relay Control 1");
         attributes.put(RELAY_STATUS_CONTROL2, "Relay Control 2");

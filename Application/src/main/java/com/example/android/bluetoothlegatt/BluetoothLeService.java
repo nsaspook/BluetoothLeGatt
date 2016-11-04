@@ -40,6 +40,18 @@ import java.util.UUID;
  * given Bluetooth LE device.
  */
 public class BluetoothLeService extends Service {
+    private final static String TAG = BluetoothLeService.class.getSimpleName();
+
+    private BluetoothManager mBluetoothManager;
+    private BluetoothAdapter mBluetoothAdapter;
+    private String mBluetoothDeviceAddress;
+    private BluetoothGatt mBluetoothGatt;
+    private int mConnectionState = STATE_DISCONNECTED;
+
+    private static final int STATE_DISCONNECTED = 0;
+    private static final int STATE_CONNECTING = 1;
+    private static final int STATE_CONNECTED = 2;
+
     public final static String ACTION_GATT_CONNECTED =
             "com.example.bluetooth.le.ACTION_GATT_CONNECTED";
     public final static String ACTION_GATT_DISCONNECTED =
@@ -50,22 +62,16 @@ public class BluetoothLeService extends Service {
             "com.example.bluetooth.le.ACTION_DATA_AVAILABLE";
     public final static String EXTRA_DATA =
             "com.example.bluetooth.le.EXTRA_DATA";
-    private final static String TAG = BluetoothLeService.class.getSimpleName();
-    private static final int STATE_DISCONNECTED = 0;
-    private static final int STATE_CONNECTING = 1;
-    private static final int STATE_CONNECTED = 2;
-    private final static UUID UUID_RELAY_STATUS_CONTROL1234 =
+
+    public final static UUID UUID_SPI_ADC_CHAN =
+            UUID.fromString(SampleGattAttributes.SPI_ADC_CHAN);
+    public final static UUID UUID_RELAY_STATUS_CONTROL1234 =
             UUID.fromString(SampleGattAttributes.RELAY_STATUS_CONTROL1234);
-    private final static UUID UUID_RELAY_STATUS_CONTROL1 =
+    public final static UUID UUID_RELAY_STATUS_CONTROL1 =
             UUID.fromString(SampleGattAttributes.RELAY_STATUS_CONTROL1);
-    private final static UUID UUID_RELAY_STATUS_CONTROL2 =
+    public final static UUID UUID_RELAY_STATUS_CONTROL2 =
             UUID.fromString(SampleGattAttributes.RELAY_STATUS_CONTROL2);
-    private final IBinder mBinder = new LocalBinder();
-    private BluetoothManager mBluetoothManager;
-    private BluetoothAdapter mBluetoothAdapter;
-    private String mBluetoothDeviceAddress;
-    private BluetoothGatt mBluetoothGatt;
-    private int mConnectionState = STATE_DISCONNECTED;
+
     // Implements callback methods for GATT events that the app cares about.  For example,
     // connection change and services discovered.
     private final BluetoothGattCallback mGattCallback = new BluetoothGattCallback() {
@@ -103,14 +109,14 @@ public class BluetoothLeService extends Service {
                                          BluetoothGattCharacteristic characteristic,
                                          int status) {
             if (status == BluetoothGatt.GATT_SUCCESS) {
-                broadcastUpdate(characteristic);
+                broadcastUpdate(ACTION_DATA_AVAILABLE, characteristic);
             }
         }
 
         @Override
         public void onCharacteristicChanged(BluetoothGatt gatt,
                                             BluetoothGattCharacteristic characteristic) {
-            broadcastUpdate(characteristic);
+            broadcastUpdate(ACTION_DATA_AVAILABLE, characteristic);
         }
     };
 
@@ -137,7 +143,7 @@ public class BluetoothLeService extends Service {
         }
     }
 
-    private void writeCustomCharacteristic(int value) {
+    public void writeCustomCharacteristic(int value) {
         if (mBluetoothAdapter == null || mBluetoothGatt == null) {
             Log.w(TAG, "BluetoothAdapter not initialized");
             return;
@@ -180,8 +186,9 @@ public class BluetoothLeService extends Service {
         }
     }
 
-    private void broadcastUpdate(final BluetoothGattCharacteristic characteristic) {
-        final Intent intent = new Intent(BluetoothLeService.ACTION_DATA_AVAILABLE);
+    private void broadcastUpdate(final String action,
+                                 final BluetoothGattCharacteristic characteristic) {
+        final Intent intent = new Intent(action);
         BluetoothGattCharacteristic ledsCharacteristic;
 
         // This is special handling for the Heart Rate Measurement profile.  Data parsing is
@@ -207,29 +214,33 @@ public class BluetoothLeService extends Service {
                 writeCustomCharacteristic(5);
             }
 
-            // writes the data formatted in HEX.
+            // For all other profiles, writes the data formatted in HEX.
             final byte[] data = ledsCharacteristic.getValue();
             if (data != null && data.length > 0) {
                 final StringBuilder stringBuilder = new StringBuilder(data.length);
                 for (byte byteChar : data)
-                    stringBuilder.append(String.format("%s ", (byteChar==1) ? "On":"Off"));
-//                    stringBuilder.append(String.format("%02X ", byteChar));
+                    stringBuilder.append(String.format("%02X ", byteChar));
                 intent.putExtra(EXTRA_DATA, new String(data) + "\n" + stringBuilder.toString());
             }
 
         } else {
             writeCustomCharacteristic(0);
             // For all other profiles, writes the data formatted in HEX.
-            final byte[] data = {0, 0, 0, 0}; // show all relays off
+            final byte[] data = characteristic.getValue();
             if (data != null && data.length > 0) {
                 final StringBuilder stringBuilder = new StringBuilder(data.length);
                 for (byte byteChar : data)
-                    stringBuilder.append(String.format("%s ", (byteChar==1) ? "On":"Off"));
- //                   stringBuilder.append(String.format("%02X ", byteChar));
+                    stringBuilder.append(String.format("%02X ", byteChar));
                 intent.putExtra(EXTRA_DATA, new String(data) + "\n" + stringBuilder.toString());
             }
         }
         sendBroadcast(intent);
+    }
+
+    public class LocalBinder extends Binder {
+        BluetoothLeService getService() {
+            return BluetoothLeService.this;
+        }
     }
 
     @Override
@@ -246,6 +257,8 @@ public class BluetoothLeService extends Service {
         return super.onUnbind(intent);
     }
 
+    private final IBinder mBinder = new LocalBinder();
+
     /**
      * Initializes a reference to the local Bluetooth adapter.
      *
@@ -258,17 +271,17 @@ public class BluetoothLeService extends Service {
             mBluetoothManager = (BluetoothManager) getSystemService(Context.BLUETOOTH_SERVICE);
             if (mBluetoothManager == null) {
                 Log.e(TAG, "Unable to initialize BluetoothManager.");
-                return true;
+                return false;
             }
         }
 
         mBluetoothAdapter = mBluetoothManager.getAdapter();
         if (mBluetoothAdapter == null) {
             Log.e(TAG, "Unable to obtain a BluetoothAdapter.");
-            return true;
+            return false;
         }
 
-        return false;
+        return true;
     }
 
     /**
@@ -330,7 +343,7 @@ public class BluetoothLeService extends Service {
      * After using a given BLE device, the app must call this method to ensure resources are
      * released properly.
      */
-    private void close() {
+    public void close() {
         if (mBluetoothGatt == null) {
             return;
         }
@@ -367,6 +380,7 @@ public class BluetoothLeService extends Service {
         }
         mBluetoothGatt.setCharacteristicNotification(characteristic, enabled);
 
+        // This is specific to Heart Rate Measurement.
         if (UUID_RELAY_STATUS_CONTROL1.equals(characteristic.getUuid())) {
             BluetoothGattDescriptor descriptor = characteristic.getDescriptor(
                     UUID.fromString(SampleGattAttributes.CLIENT_CHARACTERISTIC_CONFIG));
@@ -385,11 +399,5 @@ public class BluetoothLeService extends Service {
         if (mBluetoothGatt == null) return null;
 
         return mBluetoothGatt.getServices();
-    }
-
-    public class LocalBinder extends Binder {
-        BluetoothLeService getService() {
-            return BluetoothLeService.this;
-        }
     }
 }
